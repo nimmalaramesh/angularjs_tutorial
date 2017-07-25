@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="app.js"></script>
+    <title>htm5 custom attribute</title>
+</head>
+<body>
+    <div  ng-app="myapp">
+      <div  class="fixed-header" ng-controller="MyCon">
+          <input type="text" ng-model="name" ng-blur="upper()" /><br />
+          sayHello:{{sayFilter()}}<br />
+        counter:  {{hello}}<br />
+          truth:{{sayFilter()|truth:'sweet':'leaders'|uppercase}}<br />
+          <a href="" ng-click="goanchor(x)" ng-repeat="x in [1,2,3,4,5]">
+              go to anchor {{x}}
+          </a>
+          <button ng-click="increment()">increment</button>
+      </div>
+        <div id="anchor{{x}}" class="anchor" ng-repeat="x in [1,2,3,4,5]">
+            anchor {{x}} of 5
+        </div>
+        <div ng-controller="CacheController">
+            Key <input type="text" ng-model="key" /><br />
+            Value<input type="text" ng-model="value" /><br />
+            <button ng-click="addItems()">Add Items</button><br />
+            <p>
+                <input type="text" ng-model="key" />
+                <button ng-click="getItems()">getItems</button><br />
+                <label>items :{{currentItem}}</label><br />
+            </p>
+            <p>
+                remove items:<input type="text" ng-model="key" />
+                <button ng-click="removeItem()">removeItems</button>
+            </p>
+
+        </div>
+    </div>
+    <style>
+        /*.anchor {
+            border: 2px dashed DarkOrchid;
+            padding: 10px 10px 200px 10px;
+        }
+        .fixed-header {
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+            .fixed-header > a {
+                display: inline-block;
+                margin: 5px 15px;
+            }*/
+    </style>
+   
+</body>
+</html>
