@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/angular.js"></script>
+    <script src="app1.js"></script>
+</head>
+<body ng-app="MyModule" >
+    <div ng-controller="ParentController1">
+        <div ng-controller="ChildController1"></div>
+    </div>
+    <div ng-controller="ParentController2 as parent">
+        parent value:{{parent.value}}
+        <div ng-controller="ChildController2 as child">
+          child value:  {{child.value}}
+        </div>
+    </div>
+    <div ng-controller="AddList as list">
+        <input type="text" ng-model="list.dailyItem" />
+        <input type="text" ng-model="list.quantity" />
+        <button ng-click="list.addItems()">Add Item</button>
+    
+   
+        <div ng-repeat="it in  list.items">
+            <ol>
+                <li>{{it.itemQuatity}} of {{it.myitem}}
+
+       <button ng-click="list.removeItems($index)">remove</button></li>
+            </ol>
+       
+          
+            </div>
+        <div class="error">Error:{{list.errorMessage}}</div>
+        </div>
+
+  
+    
+</body>
+</html>
